@@ -1,0 +1,27 @@
+package plswork;
+
+import battlecode.common.GameActionException;
+import battlecode.common.RobotController;
+
+public abstract class Duck {
+    static RobotController rc;
+
+    static CursedRandom rng;
+    static Movement movement;
+    static Action action;
+
+    int creationRound;
+    static Symmetry symmetry;
+
+    public abstract void run() throws GameActionException;
+
+    public Duck(RobotController rc) throws GameActionException {
+        creationRound = rc.getRoundNum();
+        rng = new CursedRandom(rc);
+        this.rc = rc;
+        Util.rc = rc;
+        movement = new Movement(rc);
+        action = new Action(rng, rc);
+        symmetry = new Symmetry(rc);
+    }
+}

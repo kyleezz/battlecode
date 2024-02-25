@@ -1,0 +1,25 @@
+package bready;
+
+import battlecode.common.*;
+
+import java.util.Random;
+
+public abstract class Duck {
+    static RobotController rc;
+
+    static CursedRandom rng;
+    static Movement movement;
+
+    int creationRound;
+    int mapWidth, mapHeight;
+
+    public abstract void run() throws GameActionException;
+
+    public Duck(RobotController rc) throws GameActionException {
+        creationRound = rc.getRoundNum();
+        rng = new CursedRandom(rc);
+        this.rc = rc;
+        Util.rc = rc;
+        movement = new Movement(rng, rc);
+    }
+}

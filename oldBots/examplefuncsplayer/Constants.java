@@ -1,0 +1,14 @@
+package examplefuncsplayer;
+import battlecode.common.Direction;
+public class Constants {
+    public static final Direction[] directions = {
+            Direction.NORTH,
+            Direction.NORTHEAST,
+            Direction.EAST,
+            Direction.SOUTHEAST,
+            Direction.SOUTH,
+            Direction.SOUTHWEST,
+            Direction.WEST,
+            Direction.NORTHWEST,
+    };
+}
